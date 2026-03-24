@@ -1,7 +1,7 @@
 databases:
   - name: sms-db
     plan: free
-    databaseName: SMS
+    databaseName: sms_db
 
 services:
   - type: web
