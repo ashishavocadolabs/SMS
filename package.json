@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
-    "start": "npx ts-node server/index.ts",
+    "build:client": "cd client && npm run build",
+    "build:server": "npx tsc",
+    "build": "cd client && npm install && npm run build && cd .. && npx tsc",
+    "start": "node dist/index.js",
     "migrate": "npx ts-node server/migrate.ts",
     "dev:server": "npx nodemon --exec \"npx ts-node\" server/index.ts",
     "dev:client": "cd client && npm run dev",
@@ -18,10 +20,6 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.6",
-    "@types/node": "^25.5.0",
-    "@types/pg": "^8.18.0",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
@@ -30,6 +28,10 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.18.0",
     "nodemon": "^3.1.14"
   }
 }
