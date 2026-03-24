@@ -1,0 +1,2 @@
+ALTER TABLE students ADD COLUMN IF NOT EXISTS password_hash TEXT;
+ALTER TABLE teachers ADD COLUMN IF NOT EXISTS password_hash TEXT;

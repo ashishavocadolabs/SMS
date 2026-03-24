@@ -21,3 +21,4 @@ export function ProtectedRoute({ requiredRole, children }: Props) {
 
   return <>{children}</>;
 }
+

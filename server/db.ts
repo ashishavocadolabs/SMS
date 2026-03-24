@@ -1,7 +1,10 @@
-import { Pool } from "pg";
+import { Pool, types } from "pg";
 import dotenv from "dotenv";
 
 dotenv.config();
+
+// Return DATE (OID 1082) as string instead of JS Date to avoid timezone shifts
+types.setTypeParser(1082, (val: string) => val);
 
 export const pool = new Pool({
   user: process.env.DB_USER,
