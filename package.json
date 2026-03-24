@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:client": "cd client && npm run build",
-    "build:server": "npx tsc",
-    "build": "cd client && npm install && npm run build && cd .. && npx tsc",
-    "start": "node dist/index.js",
+    "build": "cd client && npm install && npm run build",
+    "start": "npx ts-node server/index.ts",
     "migrate": "npx ts-node server/migrate.ts",
     "dev:server": "npx nodemon --exec \"npx ts-node\" server/index.ts",
     "dev:client": "cd client && npm run dev",
