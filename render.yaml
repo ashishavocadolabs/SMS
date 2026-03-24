@@ -8,10 +8,11 @@ services:
     plan: free
     name: sms-app
     runtime: node
-    nodeVersion: 20.18.0
     buildCommand: npm install && cd client && npm install && npm run build && cd .. && npx tsc && npm run migrate
     startCommand: npm start
     envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
       - key: DATABASE_URL
         fromDatabase:
           name: sms-db
